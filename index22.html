@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Sabry Sons - Electrical Home Appliances</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #003366; /* Updated header color */
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            position: relative;
+        }
+        header img {
+            position: absolute;
+            top: 10px;
+            right: 10px; /* Move to the right */
+            height: 140px; /* Increase size to 1.5 times the original height (50px) */
+        }
+        nav {
+            text-align: center;
+            background-color: #1340ae;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .content {
+            padding: 20px;
+        }
+        .product, .brand {
+            display: inline-block;
+            width: 30%;
+            margin: 1%;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            position: relative;
+        }
+        .brand {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .brand img {
+            width: 100%;
+            height: auto;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        .quick-view-btn {
+            background-color: #1340ae;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .quick-view-btn:hover {
+            background-color: #003366;
+        }
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            padding-top: 100px; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgb(0,0,0); 
+            background-color: rgba(0,0,0,0.4); 
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        footer {
+            background-color: #1340ae;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Replace 'E:\web\لوجو-removebg-preview.png' with the path to your actual logo file -->
+        <img src="E:\web\لوجو-removebg-preview.png" alt="Mohamed Sabry Sons Logo">
+        <h1>Mohamed Sabry Sons</h1>
+        <p>Your trusted source for electrical home appliances</p>
+    </header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
+    <div class="container">
+        <section id="home" class="content">
+            <h2>Welcome to Mohamed Sabry Sons</h2>
+            <p>We specialize in providing high-quality electrical home appliances including fridges, washing machines, and cookers. Our commitment to excellence ensures that you receive the best products and services available.</p>
+        </section>
+        <section id="about" class="content">
+            <h2>About Us</h2>
+            <p>At Mohamed Sabry Sons, we have been serving our community with top-notch electrical home appliances for over 20 years. Our mission is to offer reliable, energy-efficient, and innovative solutions that meet the diverse needs of our customers.</p>
+        </section>
+        <section id="products" class="content">
+            <h2>Our Products</h2>
+            <div class="product">
+                <h3>Fridges</h3>
+                <div class="brand">
+                    <h4>LG</h4>
+                    <p>High quality and energy-efficient fridges from LG.</p>
+                    <img src="E:\web\beko wash.jfif" alt="LG Fridge">
+                    <button class="quick-view-btn" onclick="openModal('lgFridge')">Quick View</button>
+                </div>
+                <div class="brand">
+                    <h4>Bosch</h4>
+                    <p>Reliable and advanced fridges from Bosch.</p>
+                    <img src="E:\web\557-5577285_lg-fridge-png-transparent-png.png" alt="Bosch Fridge">
+                    <button class="quick-view-btn" onclick="openModal('boschFridge')">Quick View</button>
+                </div>
+                <div class="brand">
+                    <h4>Beko</h4>
+                    <p>Innovative and spacious fridges from Beko.</p>
+                    <img src="E:\web\images (1).jfif" alt="Beko Fridge">
+                    <button class="quick-view-btn" onclick="openModal('bekoFridge')">Quick View</button>
+                </div>
+            </div>
+            <div class="product">
+                <h3>Washing Machines</h3>
+                <div class="brand">
+                    <h4>LG</h4>
+                    <p>Top load and front load washing machines from LG.</p>
+                    <img src="E:\web\images (1).jfif" alt="LG Washing Machine">
+                    <button class="quick-view-btn" onclick="openModal('lgWashingMachine')">Quick View</button>
+                </div>
+                <div class="brand">
+                    <h4>Bosch</h4>
+                    <p>Durable and efficient washing machines from Bosch.</p>
+                    <img src="E:\web\images.jfif" alt="Bosch Washing Machine">
+                    <button class="quick-view-btn" onclick="openModal('boschWashingMachine')">Quick View</button>
+                </div>
+                <div class="brand">
+                    <h4>Beko</h4>
+                    <p>Advanced washing technology from Beko.</p>
+                    <img src="E:\web\bosch fridge.png" alt="Beko Washing Machine">
+                    <button class="quick-view-btn" onclick="openModal('bekoWashingMachine')">Quick View</button>
+                </div>
+            </div>
+            <div class="product">
+                <h3>Cookers</h3>
+                <div class="brand">
+                    <h4>LG</h4>
+                    <p>Modern and stylish cookers from LG.</p>
+                    <img src="E:\web\download.jfif" alt="LG Cooker">
+                    <button class="quick-view-btn" onclick="openModal('lgCooker')">Quick View</button>
+                </div>
+                <div class="brand">
+                    <h4>Bosch</h4>
+                    <p>Efficient and user-friendly cookers from Bosch.</p>
+                    <img src="E:\web\beko_fridge.jfif" alt="Bosch Cooker">
+                    <button class="quick-view-btn" onclick="openModal('boschCooker')">Quick View</button>
+                </div>
+                <div class="brand">
+                    <h4>Beko</h4>
+                    <p>High-performance cookers from Beko.</p>
+                    <img src="E:\web\beko wash.jfif" alt="Beko Cooker">
+                    <button class="quick-view-btn" onclick="openModal('bekoCooker')">Quick View</button>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="content">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or need assistance, please don't hesitate to contact us.</p>
+            <p>Email: info@mohamedsabrysons.com</p>
+            <p>Phone: +123 456 7890</p>
+            <p>Address: 123 Appliance Street, Home City, Country</p>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 Mohamed Sabry Sons. All rights reserved.</p>
+    </footer>
+
+    <!-- Modals -->
+    <div id="lgFridge" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('lgFridge')">&times;</span>
+            <h2>LG Fridge</h2>
+            <p>More detailed information about the LG fridge.</p>
+            <img src="path/to/lg_fridge.jpg" alt="LG Fridge">
+        </div>
+    </div>
+    <div id="boschFridge" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('boschFridge')">&times;</span>
+            <h2>Bosch Fridge</h2>
+            <p>More detailed information about the Bosch fridge.</p>
+            <img src="path/to/bosch_fridge.jpg" alt="Bosch Fridge">
+        </div>
+    </div>
+    <div id="bekoFridge" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('bekoFridge')">&times;</span>
+            <h2>Beko Fridge</h2>
+            <p>More detailed information about the Beko fridge.</p>
+            <img src="path/to/beko_fridge.jpg" alt="Beko Fridge">
+        </div>
+    </div>
+    <div id="lgWashingMachine" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('lgWashingMachine')">&times;</span>
+            <h2>LG Washing Machine</h2>
+            <p>More detailed information about the LG washing machine.</p>
+            <img src="path/to/lg_washing_machine.jpg" alt="LG Washing Machine">
+        </div>
+    </div>
+    <div id="boschWashingMachine" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('boschWashingMachine')">&times;</span>
+            <h2>Bosch Washing Machine</h2>
+            <p>More detailed information about the Bosch washing machine.</p>
+            <img src="path/to/bosch_washing_machine.jpg" alt="Bosch Washing Machine">
+        </div>
+    </div>
+    <div id="bekoWashingMachine" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('bekoWashingMachine')">&times;</span>
+            <h2>Beko Washing Machine</h2>
+            <p>More detailed information about the Beko washing machine.</p>
+            <img src="path/to/beko_washing_machine.jpg" alt="Beko Washing Machine">
+        </div>
+    </div>
+    <div id="lgCooker" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('lgCooker')">&times;</span>
+            <h2>LG Cooker</h2>
+            <p>More detailed information about the LG cooker.</p>
+            <img src="path/to/lg_cooker.jpg" alt="LG Cooker">
+        </div>
+    </div>
+    <div id="boschCooker" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('boschCooker')">&times;</span>
+            <h2>Bosch Cooker</h2>
+            <p>More detailed information about the Bosch cooker.</p>
+            <img src="path/to/bosch_cooker.jpg" alt="Bosch Cooker">
+        </div>
+    </div>
+    <div id="bekoCooker" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('bekoCooker')">&times;</span>
+            <h2>Beko Cooker</h2>
+            <p>More detailed information about the Beko cooker.</p>
+            <img src="path/to/beko_cooker.jpg" alt="Beko Cooker">
+        </div>
+    </div>
+
+    <script>
+        function openModal(id) {
+            document.getElementById(id).style.display = "block";
+        }
+        
+        function closeModal(id) {
+            document.getElementById(id).style.display = "none";
+        }
+    </script>
+</body>
+</html>
